@@ -839,7 +839,7 @@ void IGameController::OnInternalEntity(int Index, vec2 Pos, int Layer, int Flags
 		Type = POWERUP_WEAPON;
 		SubType = WEAPON_LASER;
 	}
-	else if(Index == ENTITY_POWERUP_NINJA)
+	else if(Index == ENTITY_POWERUP_NINJA && m_Powerups)
 	{
 		Type = POWERUP_NINJA;
 		SubType = WEAPON_NINJA;
