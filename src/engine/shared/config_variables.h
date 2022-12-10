@@ -99,8 +99,9 @@ MACRO_CONFIG_INT(SvVoteMaxTotal, sv_vote_max_total, 0, 0, MAX_CLIENTS, CFGFLAG_S
 MACRO_CONFIG_INT(SvRoomSetting, sv_room_setting, 0, 0, 2, CFGFLAG_SERVER, "Whether to allow player in rooms to use /setting command (2 = call votes before executing)")
 MACRO_CONFIG_INT(SvRoomCommands, sv_room_commands, 0, 0, 2, CFGFLAG_SERVER, "Whether to allow player to use /create and /join to manage rooms")
 MACRO_CONFIG_INT(SvRoomVotes, sv_roomlist_votes, 0, 0, 1, CFGFLAG_SERVER, "Whether to list rooms in vote options")
-MACRO_CONFIG_STR(SvRoomVoteTitle, sv_roomlist_vote_title, 64, "=== ROOM LIST ===", CFGFLAG_SERVER, "The title of the vote votes")
+MACRO_CONFIG_STR(SvRoomVoteTitle, sv_roomlist_vote_title, 64, "=== ROOM LIST / СПИСОК КОМНАТ ===", CFGFLAG_SERVER, "The title of the vote votes")
 MACRO_CONFIG_STR(SvLobbyOverrideConfig, sv_lobby_override_config, 128, "", CFGFLAG_SERVER, "Config applied to lobby room on top of gamemode config")
+MACRO_CONFIG_INT(SvLobbyAllowSettings, sv_lobby_allow_settings, 0, 0, 1, CFGFLAG_SERVER, "Whether to allow change settings in lobby")
 
 MACRO_CONFIG_INT(SvMapWindow, sv_map_window, 15, 0, 100, CFGFLAG_SERVER, "Map downloading send-ahead window")
 MACRO_CONFIG_INT(SvFastDownload, sv_fast_download, 1, 0, 1, CFGFLAG_SERVER, "Enables fast download of maps")

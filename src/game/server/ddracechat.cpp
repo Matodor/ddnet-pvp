@@ -808,12 +808,13 @@ void CGameContext::ConInstanceCommand(IConsole::IResult *pResult, void *pUserDat
 		return;
 	}
 
-	if(Instance.m_pWorld->Team() == 0 && Auth < AUTHED_MOD)
+	if(g_Config.m_SvLobbyAllowSettings != 1 && Instance.m_pWorld->Team() == 0 && Auth < AUTHED_MOD)
 	{
 		pSelf->Console()->Print(
 			IConsole::OUTPUT_LEVEL_STANDARD,
 			aInstanceBuf,
-			"You can't execute command in lobby room / room 0");
+			"You can't execute command in lobby room / room 0"
+		);
 		return;
 	}
 
@@ -849,10 +850,7 @@ void CGameContext::ConInstanceCommand(IConsole::IResult *pResult, void *pUserDat
 				if(pSelf->m_VoteCloseTime > 0)
 				{
 					str_format(aBuf, sizeof(aBuf), "You can't call a setting vote now, because a server vote is in progress.");
-					pSelf->Console()->Print(
-						IConsole::OUTPUT_LEVEL_STANDARD,
-						aInstanceBuf,
-						"You can't execute command in lobby room / room 0");
+					Instance.m_pController->SendChatTarget(ClientID, aBuf);
 				}
 				else
 				{
